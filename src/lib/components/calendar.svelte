@@ -20,7 +20,7 @@
             },
             events: {
                 // Ensure this file exists in your static folder or provide a valid URL
-                url: 'src/lib/components/assets/qwerhacks@gmail.com.ics', 
+                url: '/qwerhacks@gmail.com.ics', 
                 format: 'ics'
             }
         });
