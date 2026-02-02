@@ -10,8 +10,9 @@
 	import Rsvp from '$lib/components/rsvp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
 	import ThemeAndTracks from '$lib/components/theme-and-tracks.svelte';
+	import Calendar from '$lib/components/calendar.svelte';
 
-	let activeTab: 'application' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
+	let activeTab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">
@@ -52,6 +53,8 @@
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
 		{#if activeTab === 'application'}
 			<ApplicationDirectEmbed />
+		{:else if activeTab === 'schedule'}
+			<Calendar />
 		{:else if activeTab === 'volunteer'}
 			<VolunteerFormEmbed />
 		{:else if activeTab === 'rsvp'}

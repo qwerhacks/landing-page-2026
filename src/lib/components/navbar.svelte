@@ -2,12 +2,12 @@
     import { createEventDispatcher } from 'svelte';
     import { slide } from 'svelte/transition';
 
-    export let activeTab: 'application' |'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
+    export let activeTab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
 
     const dispatch = createEventDispatcher();
     let isMenuOpen = false;
 
-    function setTab(tab: 'application' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
+    function setTab(tab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
         activeTab = tab;
         dispatch('change', tab);
         isMenuOpen = false;
@@ -16,13 +16,20 @@
 
 <nav class="w-full z-20 relative backdrop-blur-md bg-black/20 border-b border-white/10" aria-label="Main Navigation">
     <!-- Desktop Menu -->
-    <div class="hidden xl:flex justify-center items-center gap-4 py-4 px-8">
+    <div class="hidden xl:flex justify-center items-center gap-4 py-4 pl-8 pr-44">
         <button 
             class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
             on:click={() => setTab('application')}
             aria-current={activeTab === 'application' ? 'page' : undefined}
         >
             Application
+        </button>
+        <button 
+            class="nav-btn {activeTab === 'schedule' ? 'active' : ''}" 
+            on:click={() => setTab('schedule')}
+            aria-current={activeTab === 'schedule' ? 'page' : undefined}
+        >
+            Schedule
         </button>
         <!--<button 
             class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
@@ -96,6 +103,13 @@
                 aria-current={activeTab === 'application' ? 'page' : undefined}
             >
                 Application
+            </button>
+            <button 
+                class="nav-btn {activeTab === 'schedule' ? 'active' : ''}" 
+                on:click={() => setTab('schedule')}
+                aria-current={activeTab === 'schedule' ? 'page' : undefined}
+            >
+                Schedule
             </button>
             <!--<button 
                 class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
