@@ -45,9 +45,80 @@
 			{/if}
 		</div>
 	{/each}
+
+	<img src="/astronaut_dog.png" alt="Astronaut Dog" class="astronaut-dog" />
+	<img src="/monocle_dog.png" alt="Monocle Dog" class="monocle-dog" />
+	<img src="/watch.png" alt="Watch" class="watch" />
+	<img src="/hourglass.png" alt="Hourglass" class="hourglass" />
 </div>
 
 <style>
+	.astronaut-dog {
+		position: absolute;
+		opacity: 40%;
+		bottom: 10%;
+		right: 10%;
+		width: 350px;
+		height: auto;
+		animation: float-dog 6s ease-in-out infinite alternate;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.monocle-dog {
+		position: absolute;
+		opacity: 40%;
+		top: 5%;
+		left: 10%;
+		width: 350px;
+		height: auto;
+		animation: float-dog 7s ease-in-out infinite alternate-reverse;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.watch {
+		position: absolute;
+		opacity: 40%;
+		top: 20%;
+		right: 15%;
+		width: 200px;
+		height: auto;
+		animation: float-dog 5s ease-in-out infinite alternate;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.hourglass {
+		position: absolute;
+		opacity: 40%;
+		bottom: 0%;
+		left: 15%;
+		width: 200px;
+		height: auto;
+		animation: float-dog 8s ease-in-out infinite alternate-reverse;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	@media (max-width: 768px) {
+		.astronaut-dog,
+		.monocle-dog,
+		.watch,
+		.hourglass {
+			display: none;
+		}
+	}
+
+	@keyframes float-dog {
+		0% {
+			transform: translateY(0) rotate(0deg);
+		}
+		100% {
+			transform: translateY(-20px) rotate(5deg);
+		}
+	}
+
 	.star {
 		position: absolute;
 		background: white;
