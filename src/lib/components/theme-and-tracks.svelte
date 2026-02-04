@@ -82,6 +82,56 @@
 			]
 		}
 	];
+
+	const guidingQuestions = {
+		preserve: {
+			label: "Preserve",
+			color: "#FCD34D",
+			questions: [
+				"Technology has come a long way! Think about what technologies were around before your time. Can they still be used for certain purposes today?",
+				"What do you remember about past revolutions and protests for equality (e.g. women’s voting rights, Black Lives Matter, the Stonewall Movement)? What lessons can we take from them to make positive change today?",
+				"Think about your own cultural background. What are some aspects (cuisine, holidays, traditions, etc.) of it you wish other people were more aware of? How can you use tech to spread awareness about them?",
+				"We often hear about queer people, people of color, and women playing major roles in technological advancement, and how their stories tend to be hidden or erased from history. How can we honor their influence in today’s world?"
+			]
+		},
+		nurture: {
+			label: "Nurture",
+			color: "#4ADE80",
+			questions: [
+				"In a moment where DEI initiatives are increasingly challenged, how might technology help schools and companies implement DEI in ways that are more mindful, transparent, and grounded in real community needs?",
+				"Artists, writers, actors, and other creators are pushing against AI’s exploitation and replacement of creative labor. How can we design systems that help creators maintain authorship and attribution over their creative works?",
+				"In a world where digital platforms often accelerate consumption and waste, how can technology be reimagined to support repair, reuse, and long-term care instead?"
+			]
+		},
+		innovate: {
+			label: "Innovate",
+			color: "#60A5FA",
+			questions: [
+				"Consider the future needs of fields like education and health. How can newer or emerging technologies be used in novel and creative ways to support them?",
+				"What futures are missing from today’s technologies, and whose voices are underrepresented or excluded in how current tools are being designed? How can we uplift those voices?",
+				"Consider the impact of AI and automation on so many aspects of society. How can we lead ethical innovation and use AI responsibly and equitably?"
+			]
+		}
+	};
+
+	let activeTrack = "preserve";
+	let activeIndex = 0;
+
+	function nextQuestion() {
+		const list = guidingQuestions[activeTrack].questions;
+		activeIndex = (activeIndex + 1) % list.length;
+	}
+
+	function prevQuestion() {
+		const list = guidingQuestions[activeTrack].questions;
+		activeIndex = (activeIndex - 1 + list.length) % list.length;
+	}
+
+	function switchTrack(track: string) {
+		activeTrack = track;
+		activeIndex = 0;
+	}
+
 </script>
 
 <div class="space-y-12 py-0 px-4" style="background: transparent !important;">
@@ -214,6 +264,57 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- GUIDING QUESTIONS CAROUSEL -->
+	<section class="max-w-4xl mx-auto text-center relative mt-16" aria-labelledby="guiding-questions-title">
+		<div class="cta-card p-10 relative overflow-hidden">
+			<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-green-400 to-blue-400 opacity-20 blur-xl animate-gradient-rotate"></div>
+			<div class="absolute inset-[2px] rounded-2xl bg-black/20 backdrop-blur-xl"></div>
+
+			<div class="relative z-10">
+				<h2 id="guiding-questions-title" class="cta-title text-3xl md:text-4xl mb-6">
+					Guiding Questions
+				</h2>
+
+				<!-- Track selector -->
+				<div class="flex justify-center gap-4 mb-8 flex-wrap">
+					{#each Object.entries(guidingQuestions) as [key, track]}
+						<button
+							on:click={() => switchTrack(key)}
+							class="px-5 py-2 rounded-full text-sm font-semibold transition-all"
+							style="
+								border: 2px solid {track.color};
+								color: {activeTrack === key ? 'black' : track.color};
+								background: {activeTrack === key ? track.color : 'transparent'};
+							"
+						>
+							{track.label}
+						</button>
+					{/each}
+				</div>
+
+				<!-- Carousel -->
+				<div
+					class="relative flex items-center justify-center gap-4"
+					style="--accent-color: {guidingQuestions[activeTrack].color};"
+				>
+					<button on:click={prevQuestion} class="carousel-arrow">←</button>
+
+					<div class="carousel-card">
+						<p class="text-lg md:text-xl leading-relaxed text-white/90" style="font-family: 'Spectral', serif;">
+							{guidingQuestions[activeTrack].questions[activeIndex]}
+						</p>
+						<p class="mt-4 text-sm text-white/60">
+							{activeIndex + 1} / {guidingQuestions[activeTrack].questions.length}
+						</p>
+					</div>
+
+					<button on:click={nextQuestion} class="carousel-arrow">→</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
 </div>
 
 <style>
@@ -419,5 +520,35 @@
 
 	.delay-2000 {
 		animation-delay: 2s;
+	}
+	
+	/* Guiding Questions Carousel */
+	.carousel-card {
+		background: rgba(0, 0, 0, 0.35);
+		backdrop-filter: blur(14px);
+		border-radius: 1rem;
+		padding: 2rem;
+		max-width: 36rem;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+		border: 1px solid var(--accent-color);
+	}
+
+	.carousel-arrow {
+		font-size: 1.75rem;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 9999px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid var(--accent-color);
+		color: var(--accent-color);
+		transition: all 0.25s ease;
+	}
+
+	.carousel-arrow:hover {
+		background: var(--accent-color);
+		color: black;
+		transform: scale(1.1);
 	}
 </style>
