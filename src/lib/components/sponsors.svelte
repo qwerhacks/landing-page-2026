@@ -13,7 +13,7 @@
 			aria-label="Visit Pure Buttons website (opens in a new tab)"
 		>
 			<img 
-				src="https://static.mlh.io/brand-assets/sponsors/pure-buttons/Pure-Buttons-Blue-Gradient-Logo-RGB.svg?_gl=1*19hc52h*_ga*Njc1MTgyNzI5LjE3NjcxMzU3MTM.*_ga_E5KT6TC4TK*czE3NjczMzUzNTckbzMkZzAkdDE3NjczMzUzNzAkajQ3JGwwJGgw" 
+				src="/pure-buttons-logo.svg" 
 				alt="Pure Buttons Logo" 
 				class="w-full h-full object-contain"
 			/>
@@ -28,13 +28,97 @@
 			aria-label="Visit David Bohnett Foundation website (opens in a new tab)"
 		>
 			<img 
-				src="https://lgbtq.ucla.edu/sites/default/files/styles/header_image/public/portals/38/images/headers/bohnett_foundation_logo.png?itok=1eU0gdDb" 
+				src="/bohnett-logo.png" 
 				alt="David Bohnett Foundation Logo" 
 				class="w-full h-full object-contain"
 			/>
 		</a>
-	</div>
+		<!--Boeing-->
+		<a 
+			href="https://www.boeing.com/"
+			target="_blank" 
+			rel="noopener noreferrer"
+			class="sponsor-link w-56 h-40 p-4 flex items-center justify-center bg-white rounded-lg hover:bg-gray-200 transition-all duration-300"
+			aria-label="Visit Boeing website (opens in a new tab)"
+		>
+			<img 
+				src="/boeing-logo.png" 
+				alt="Boeing Logo" 
+				class="w-full h-full object-contain"
+			/>
+		</a>
+		<!--Moog-->
+		<a 
+			href="https://www.moog.com/"
+			target="_blank" 
+			rel="noopener noreferrer"
+			class="sponsor-link w-56 h-40 p-4 flex items-center justify-center bg-white rounded-lg hover:bg-gray-200 transition-all duration-300"
+			aria-label="Visit Moog website (opens in a new tab)"
+		>
+			<img 
+				src="/moog-logo.webp" 
+				alt="Moog Logo" 
+				class="w-full h-full object-contain"
+			/>
+		</a>
+		<!--Lockheed Martin-->
+		<a 
+			href="https://www.lockheedmartin.com/"
+			target="_blank" 
+			rel="noopener noreferrer"
+			class="sponsor-link w-56 h-40 p-4 flex items-center justify-center bg-white rounded-lg hover:bg-gray-200 transition-all duration-300"
+			aria-label="Visit Lockheed Martin website (opens in a new tab)"
+		>
+			<img 
+				src="/lockheed-martin-logo.png" 
+				alt="Lockheed Martin Logo" 
+				class="w-full h-full object-contain"
+			/>
+		</a>
+		<!--PPG-->
+		<a 
+			href="https://www.ppg.com/"
+			target="_blank" 
+			rel="noopener noreferrer"
+			class="sponsor-link w-56 h-40 p-4 flex items-center justify-center bg-white rounded-lg hover:bg-gray-200 transition-all duration-300"
+			aria-label="Visit PPG website (opens in a new tab)"
+		>
+			<img 
+				src="/ppg-logo.png"
+				alt="PPG Logo" 
+				class="w-full h-full object-contain"
+			/>
+		</a>
+		<!--USAC-->
+		<a 
+			href="https://www.usac.ucla.edu/"
+			target="_blank" 
+			rel="noopener noreferrer"
+			class="sponsor-link w-56 h-40 p-4 flex items-center justify-center bg-white rounded-lg hover:bg-gray-200 transition-all duration-300"
+			aria-label="Visit UCLA Undergraduate Students Association Council website (opens in a new tab)"
+		>
+			<img 
+				src="/usac-logo.png"
+				alt="UCLA Undergraduate Students Association Council Logo" 
+				class="w-full h-full object-contain"
+			/>
+		</a>
+		<!--The Green Initiative Fund-->
+		<a 
+			href="https://www.tgif.ucla.edu/"
+			target="_blank" 
+			rel="noopener noreferrer"
+			class="sponsor-link w-56 h-40 p-4 flex items-center justify-center bg-white rounded-lg hover:bg-gray-200 transition-all duration-300"
+			aria-label="Visit UCLA Green Initiative Fund website (opens in a new tab)"
+		>
+			<img 
+				src="/tgif-logo.png"
+				alt="The Green Initiative Fund Logo" 
+				class="w-full h-full object-contain"
+			/>
+		</a>
 
+	</div>
 	<p class="text-lg text-center mt-12" style="font-family: 'Spectral', serif;">
 		Interested in sponsoring QWER Hacks? <a href="mailto:qwerhacks@gmail.com" class="underline hover:text-yellow-200" aria-label="Email qwerhacks@gmail.com to contact us">Contact us!</a>
 	</p>
