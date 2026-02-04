@@ -9,15 +9,24 @@
     let calendar;
 
     onMount(() => {
+        const isMobile = window.innerWidth < 768;
+
         calendar = new Calendar(calendarEl, {
             plugins: [dayGridPlugin, listPlugin, iCalendarPlugin],
             initialView: 'dayGridMonth',
+            height: 'auto',
+            aspectRatio: isMobile ? 0.65 : 1.35,
             firstDay: 1, // Start week on Monday so Sat/Sun appear in the same view
             headerToolbar: {
                 left: 'prev,next',
                 center: 'title',
-                right: 'dayGridMonth,listWeek' 
+                right: isMobile ? '' : 'dayGridMonth,listWeek' 
             },
+            footerToolbar: isMobile ? {
+                left: '',
+                center: 'dayGridMonth,listWeek',
+                right: ''
+            } : {},
             events: {
                 // Ensure this file exists in your static folder or provide a valid URL
                 url: '/qwerhacks@gmail.com.ics', 
@@ -80,6 +89,23 @@
     :global(.fc-toolbar-title) {
         font-family: 'Milonga', serif;
         font-size: 1.8rem;
+    }
+
+    @media (max-width: 768px) {
+        :global(.fc-header-toolbar) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1rem !important;
+        }
+
+        :global(.fc-toolbar-title) {
+            font-size: 1.5rem !important;
+            margin: 0 !important;
+        }
+
+        :global(.fc-footer-toolbar) {
+            margin-top: 1rem !important;
+        }
     }
 
     /* Day of Week Headers (Mon, Tue, Wed...) */

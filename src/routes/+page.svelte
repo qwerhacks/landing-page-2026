@@ -78,7 +78,7 @@
 			</div>
 		{/if}
 	</div>
-	<footer class="footer w-full text-center pb-10 z-20 relative">
+	<footer class="footer text-center pb-10 z-20 relative mb-[20px] mx-[20px]">
 		<a
 			href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
 			target="_blank"

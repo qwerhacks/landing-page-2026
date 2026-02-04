@@ -83,6 +83,36 @@
 		}
 	];
 
+	const trackSpeakers = [
+		{
+			name: "Preserving the Past",
+			images: [],
+			color: "yellow",
+			gradient: "from-yellow-400 via-yellow-300 to-yellow-500",
+			borderColor: "border-yellow-400",
+			accentColor: "#FCD34D",
+			description: ""
+		},
+		{
+			name: "Nurturing the Present",
+			images: [],
+			color: "green",
+			gradient: "from-green-400 via-green-300 to-green-500",
+			borderColor: "border-green-400",
+			accentColor: "#4ADE80",
+			description: ""
+		},
+		{
+			name: "Innovating the Future: Sharvani Jha and Arjun Subramonian",
+			images: ["/sharvani_jha.png", "/arjun_subramonian.JPG"],
+			color: "blue",
+			gradient: "from-blue-400 via-blue-300 to-blue-500",
+			borderColor: "border-blue-400",
+			accentColor: "#60A5FA",
+			description: "Arjun and Sharvani are UCLA alumni, QWER Hacks co-founders, and organizers for the grassroots organization Queer in AI (which researches how AI impacts LGBTQIA+ communities and advocates for queer rights in AI policy). The two of them are excited to help imagine futures and redesign systems that value and benefit queer people, center data privacy, and facilitate collective design. (And, unlike the first QWER Hacks, they will ❗not ❗be presenting Carey Nachenberg’s slides last-minute)."
+		}
+	];
+
 	const guidingQuestions = {
 		preserve: {
 			label: "Preserve",
@@ -315,6 +345,57 @@
 		</div>
 	</section>
 
+	<!-- SPEAKERS SECTION -->
+	<section class="max-w-6xl mx-auto relative" style="background: transparent;" aria-labelledby="speakers-title">
+		<div class="text-center mb-12">
+			<h1 id="speakers-title" class="speakers-title text-4xl md:text-6xl mb-4">
+				Track Speakers
+			</h1>
+			<p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90" style="font-family: 'Spectral', serif;">
+				Hear from our speakers and listen to stories that transcend time!
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 lg:grid-cols-1 gap-8" style="background: transparent;">
+			{#each trackSpeakers as speaker}
+				{#if speaker.images && speaker.images.length > 0}
+					<div class="speaker-card p-8 flex flex-col relative group" style="--accent-color: {speaker.accentColor};">
+						<!-- Glowing border effect -->
+						<div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+							style="background: linear-gradient(135deg, {speaker.accentColor}40, {speaker.accentColor}20); filter: blur(20px);"></div>
+						
+						<!-- Card content -->
+						<div class="relative z-10 flex flex-col h-full text-center">
+							<div class="mb-6 flex flex-col items-center">
+								<h2 class="speaker-card-title text-2xl md:text-3xl mb-6" style="color: {speaker.accentColor};">
+									{speaker.name}
+								</h2>
+
+								<!-- Images Grid -->
+								<div class="flex flex-wrap gap-6 mb-6 justify-center">
+									{#each speaker.images as img}
+										<div class="relative group/img">
+											<img 
+												src={img} 
+												alt="Speaker" 
+												class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full shadow-lg border-2"
+												style="border-color: {speaker.accentColor};"
+											/>
+										</div>
+									{/each}
+								</div>
+
+								<p class="card-text mb-6 leading-relaxed text-white/90">
+									{speaker.description}
+								</p>
+							</div>
+						</div>
+					</div>
+				{/if}
+			{/each}
+		</div>
+
+	</section>
 </div>
 
 <style>
@@ -337,6 +418,17 @@
 	}
 
 	.theme-main-title {
+		font-family: 'Ranille Normal', serif;
+		background: linear-gradient(135deg, #FCD34D, #4ADE80, #60A5FA);
+		background-size: 200% 200%;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		animation: gradient-shift 3s ease infinite;
+		filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.4));
+	}
+
+	.speakers-title {
 		font-family: 'Ranille Normal', serif;
 		background: linear-gradient(135deg, #FCD34D, #4ADE80, #60A5FA);
 		background-size: 200% 200%;
@@ -550,5 +642,52 @@
 		background: var(--accent-color);
 		color: black;
 		transform: scale(1.1);
+	}
+
+	/* Speaker Card - Duplicated from Track Card */
+	.speaker-card {
+		background: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(16px);
+		border: none;
+		border-radius: 1.25rem;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.speaker-card::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: 1.25rem;
+		padding: 2px;
+		background: linear-gradient(135deg, var(--accent-color), transparent);
+		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		opacity: 0;
+		transition: opacity 0.4s;
+	}
+
+	.speaker-card:hover {
+		transform: translateY(-8px) scale(1.02);
+		box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 30px var(--accent-color)40;
+	}
+
+	.speaker-card:hover::before {
+		opacity: 1;
+	}
+
+	.speaker-card-title {
+		font-family: 'Ranille Normal', serif;
+		font-size: 1.75rem;
+		margin-bottom: 0.5rem;
+		text-shadow: 0 0 20px currentColor;
+		transition: all 0.3s;
+	}
+
+	.speaker-card:hover .speaker-card-title {
+		text-shadow: 0 0 30px currentColor, 0 0 40px currentColor;
 	}
 </style>
