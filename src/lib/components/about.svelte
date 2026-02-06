@@ -193,7 +193,6 @@
 		</a>
 	</div>
 
-	
 	<p class="text-xl font-bold text-center mt-12" style="font-family: 'Spectral', serif;">
 		<strong>We’re here, we’re QWER, and can’t wait to see you!</strong>
 	</p>
