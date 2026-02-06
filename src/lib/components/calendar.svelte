@@ -4,6 +4,7 @@
     import dayGridPlugin from '@fullcalendar/daygrid';
     import listPlugin from '@fullcalendar/list';
     import iCalendarPlugin from '@fullcalendar/icalendar';
+    import WorkshopCarousel from './workshop_carousel.svelte';
 
     let calendarEl;
     let calendar;
@@ -45,6 +46,7 @@
 </script>
 
 <div bind:this={calendarEl} class="calendar-container"></div>
+<WorkshopCarousel />
 
 <style>
     .calendar-container {
