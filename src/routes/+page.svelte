@@ -40,16 +40,28 @@
 		<p class="text-xl sm:text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
 			UCLA | Feb 7-8, 2026
 		</p>
-		<a 
-			href="https://discord.gg/D7Kg2Ef9"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="inline-block mt-6 px-8 py-3 bg-[#C5A059] text-white font-bold text-xl sm:text-2xl uppercase tracking-wider rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-[#b08d4d] hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] cursor-pointer text-center no-underline" 
-			style="font-family: 'Ranille Normal', serif;"
+		<div class="buttons-flex">
+			<a 
+				href="https://discord.gg/D7Kg2Ef9"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-block mt-6 px-8 py-3 bg-[#C5A059] text-white font-bold text-xl sm:text-2xl uppercase tracking-wider rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-[#b08d4d] hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] cursor-pointer text-center no-underline" 
+				style="font-family: 'Ranille Normal', serif;"
 
-		>
-			Join our Discord!
-		</a>
+			>
+				Discord
+			</a>
+			<a 
+				href="https://qwer-hacks-2026.devpost.com/?_gl=1*1izr6bf*_gcl_au*NTU5MTg4ODE4LjE3NjcxNDIwMzk.*_ga*MjAwNjg3MzQ1MC4xNzY3MTQyMDM5*_ga_0YHJK3Y10M*czE3NzAxOTk3MTQkbzYkZzEkdDE3NzAxOTk3MjEkajUzJGwwJGgw"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-block mt-6 px-8 py-3 bg-[#C5A059] text-white font-bold text-xl sm:text-2xl uppercase tracking-wider rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-[#b08d4d] hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] cursor-pointer text-center no-underline" 
+				style="font-family: 'Ranille Normal', serif;"
+
+			>
+				Devpost
+			</a>
+		</div>
 	</div>
 	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
 		{#if activeTab === 'application'}
@@ -124,6 +136,11 @@
 
 	a.footer-link:hover {
 		color: #fef08a;
+	}
+
+	.buttons-flex {
+		display: flex;
+		gap: 20px;
 	}
 	
 </style>
