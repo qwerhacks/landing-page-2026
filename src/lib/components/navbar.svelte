@@ -2,12 +2,12 @@
     import { createEventDispatcher } from 'svelte';
     import { slide } from 'svelte/transition';
 
-    export let activeTab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
+    export let activeTab: 'application' | 'schedule' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
 
     const dispatch = createEventDispatcher();
     let isMenuOpen = false;
 
-    function setTab(tab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
+    function setTab(tab: 'application' | 'schedule' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
         activeTab = tab;
         dispatch('change', tab);
         isMenuOpen = false;
@@ -38,13 +38,14 @@
         >
             RSVP
         </button>-->
+        <!--
         <button
             class="nav-btn {activeTab === 'volunteer' ? 'active' : ''}" 
             on:click={() => setTab('volunteer')}
             aria-current={activeTab === 'volunteer' ? 'page' : undefined}
         >
             Volunteer
-        </button>
+        </button>-->
         <button 
             class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
             on:click={() => setTab('about')}
@@ -118,13 +119,14 @@
             >
                 RSVP
             </button>-->
+            <!--
             <button
             class="nav-btn {activeTab === 'volunteer' ? 'active' : ''}" 
             on:click={() => setTab('volunteer')}
             aria-current={activeTab === 'volunteer' ? 'page' : undefined}
             >
                 Volunteer
-            </button>
+            </button>-->
             <button 
                 class="nav-btn {activeTab === 'about' ? 'active' : ''}" 
                 on:click={() => setTab('about')}
