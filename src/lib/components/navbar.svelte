@@ -2,12 +2,12 @@
     import { createEventDispatcher } from 'svelte';
     import { slide } from 'svelte/transition';
 
-    export let activeTab: 'application' | 'schedule' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
+    export let activeTab: 'schedule' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'schedule';
 
     const dispatch = createEventDispatcher();
     let isMenuOpen = false;
 
-    function setTab(tab: 'application' | 'schedule' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
+    function setTab(tab: 'schedule' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks') {
         activeTab = tab;
         dispatch('change', tab);
         isMenuOpen = false;
@@ -23,13 +23,6 @@
             aria-current={activeTab === 'schedule' ? 'page' : undefined}
         >
             Schedule
-        </button>
-        <button 
-            class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
-            on:click={() => setTab('application')}
-            aria-current={activeTab === 'application' ? 'page' : undefined}
-        >
-            Application
         </button>
         <!--<button 
             class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
@@ -104,13 +97,6 @@
                 aria-current={activeTab === 'schedule' ? 'page' : undefined}
             >
                 Schedule
-            </button>
-            <button 
-                class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
-                on:click={() => setTab('application')}
-                aria-current={activeTab === 'application' ? 'page' : undefined}
-            >
-                Application
             </button>
             <!--<button 
                 class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
