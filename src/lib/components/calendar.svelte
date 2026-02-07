@@ -14,20 +14,15 @@
 
         calendar = new Calendar(calendarEl, {
             plugins: [dayGridPlugin, listPlugin, iCalendarPlugin],
-            initialView: 'dayGridMonth',
+            initialView: 'listWeek',
             height: 'auto',
             aspectRatio: isMobile ? 0.65 : 1.35,
             firstDay: 1, // Start week on Monday so Sat/Sun appear in the same view
             headerToolbar: {
                 left: 'prev,next',
                 center: 'title',
-                right: isMobile ? '' : 'dayGridMonth,listWeek' 
+                right: '' 
             },
-            footerToolbar: isMobile ? {
-                left: '',
-                center: 'dayGridMonth,listWeek',
-                right: ''
-            } : {},
             events: {
                 // Ensure this file exists in your static folder or provide a valid URL
                 url: '/qwerhacks@gmail.com.ics', 
@@ -51,7 +46,7 @@
 <style>
     .calendar-container {
         width: 90%;
-        max-width: 900px;
+        max-width: 1600px;
         margin: 2rem auto;
         padding: 20px;
         border-radius: 16px;
@@ -135,5 +130,24 @@
     :global(a.fc-daygrid-day-number:hover) {
         text-decoration: none;
         color: #C5A059 !important; /* Gold on hover */
+    }
+
+    /* Allow event text to wrap in month view */
+    :global(.fc-daygrid-event) {
+        white-space: normal !important;
+        height: auto !important;
+        align-items: flex-start !important; /* Align dot with top of text */
+        padding: 2px !important;
+    }
+    :global(.fc-event-main) {
+        white-space: normal !important;
+        overflow-wrap: break-word;
+    }
+    :global(.fc-event-title),
+    :global(.fc-event-time) {
+        font-size: 0.85em !important; /* Reduce font size for better fit */
+        line-height: 1.2 !important;
+        text-align: left !important;
+        white-space: normal !important;
     }
 </style>

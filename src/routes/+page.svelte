@@ -12,7 +12,7 @@
 	import ThemeAndTracks from '$lib/components/theme-and-tracks.svelte';
 	import Calendar from '$lib/components/calendar.svelte';
 
-	let activeTab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'application';
+	let activeTab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'schedule';
 </script>
 
 <div class="w-full h-full overflow-y-auto overscroll-contain">

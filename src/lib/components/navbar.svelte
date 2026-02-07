@@ -18,18 +18,18 @@
     <!-- Desktop Menu -->
     <div class="hidden xl:flex justify-center items-center gap-4 py-4 pl-8 pr-44">
         <button 
-            class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
-            on:click={() => setTab('application')}
-            aria-current={activeTab === 'application' ? 'page' : undefined}
-        >
-            Application
-        </button>
-        <button 
             class="nav-btn {activeTab === 'schedule' ? 'active' : ''}" 
             on:click={() => setTab('schedule')}
             aria-current={activeTab === 'schedule' ? 'page' : undefined}
         >
             Schedule
+        </button>
+        <button 
+            class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
+            on:click={() => setTab('application')}
+            aria-current={activeTab === 'application' ? 'page' : undefined}
+        >
+            Application
         </button>
         <!--<button 
             class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 
@@ -99,18 +99,18 @@
     {#if isMenuOpen}
         <div id="mobile-menu" class="xl:hidden flex flex-col items-center pb-6 gap-4 border-t border-white/5 bg-black/10" transition:slide>
             <button 
-                class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
-                on:click={() => setTab('application')}
-                aria-current={activeTab === 'application' ? 'page' : undefined}
-            >
-                Application
-            </button>
-            <button 
                 class="nav-btn {activeTab === 'schedule' ? 'active' : ''}" 
                 on:click={() => setTab('schedule')}
                 aria-current={activeTab === 'schedule' ? 'page' : undefined}
             >
                 Schedule
+            </button>
+            <button 
+                class="nav-btn {activeTab === 'application' ? 'active' : ''}" 
+                on:click={() => setTab('application')}
+                aria-current={activeTab === 'application' ? 'page' : undefined}
+            >
+                Application
             </button>
             <!--<button 
                 class="nav-btn {activeTab === 'rsvp' ? 'active' : ''}" 

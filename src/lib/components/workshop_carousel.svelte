@@ -21,12 +21,12 @@
         {
             title: "Blueprint: Intro to UI/UX",
             image: "blueprint.png",
-            description: "Blurb coming…"
+            description: "LA Blueprint is a student-run 501(c)(3) nonprofit committed to building and promoting tech for social good—free of charge. We collaborate with nonprofit organizations in Southern California and beyond to build mobile and web applications."
         },
         {
             title: "MLH: Intro to Git Copilot & Intro to Gemini",
             image: "mlh.png",
-            description: "Blurb coming…"
+            description: "Hacking with GitHub Copilot: Elevate your hackathon game in just under an hour! Join this workshop on Hacking with GitHub Copilot, and discover how this AI companion transforms the coding experience for beginners and seasoned developers. Copilot isn't just another tool you can use to speed up your development; it's like having another hacker on your team!\nIntro to Google AI Studio: Google AI Studio is the fastest way to start building with the Gemini family of multimodal generative AI models. Google AI Studio allows you to try out Gemini's massive token context window, grab an API key in seconds, and so much more."
         }
     ];
 
@@ -84,9 +84,13 @@
                         {workshops[currentIndex].title}
                     </h3>
                     <div class="max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
-                        <p class="text-base md:text-lg leading-relaxed text-gray-200" style="font-family: 'Spectral', serif;">
-                            {workshops[currentIndex].description}
-                        </p>
+                        <div class="text-base md:text-lg leading-relaxed text-gray-200" style="font-family: 'Spectral', serif;">
+                            {#each workshops[currentIndex].description.split('\n') as line, lineIndex}
+                                {#if line.trim().length}
+                                    <p class={lineIndex > 0 ? 'mt-3' : ''}>{line}</p>
+                                {/if}
+                            {/each}
+                        </div>
                     </div>
                 </div>
             {/key}
