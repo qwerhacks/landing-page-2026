@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Background from '$lib/components/background.svelte';
 	import Hero from '$lib/components/hero.svelte';
-	import Application from '$lib/components/application.svelte';
 	import ApplicationDirectEmbed from '$lib/components/application_direct_embed.svelte';
 	import VolunteerFormEmbed from '$lib/components/volunteer_form_embed.svelte';
 	import About from '$lib/components/about.svelte';
