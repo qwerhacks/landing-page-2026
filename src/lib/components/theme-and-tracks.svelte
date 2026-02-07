@@ -85,13 +85,13 @@
 
 	const trackSpeakers = [
 		{
-			name: "Preserving the Past",
-			images: [],
+			name: "Preserving the Past: Sim-Marcel Bilal",
+			images: ["/sim-marcel_bilal.png"],
 			color: "yellow",
 			gradient: "from-yellow-400 via-yellow-300 to-yellow-500",
 			borderColor: "border-yellow-400",
 			accentColor: "#FCD34D",
-			description: ""
+			description: "Sim-Marcel Bilal is a community organizer, hacker, and the Executive Director of Youth Climate Strike Los Angeles. Born and raised in South Central LA to a Korean mother and an Afro-Indigenous (Chickasaw) father, his work is rooted in the frontline realities of climate collapse, environmental injustice, and cultural survival. A hacktivist from age 11, Sim channels his background in technology and systems-thinking toward building community power, developing tools for disaster response, community empowerment, and Indigenous-futurism."
 		},
 		{
 			name: "Nurturing the Present",
