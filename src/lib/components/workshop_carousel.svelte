@@ -21,7 +21,7 @@
         {
             title: "Blueprint: Intro to UI/UX",
             image: "blueprint.png",
-            description: "LA Blueprint is a student-run 501(c)(3) nonprofit committed to building and promoting tech for social good—free of charge. We collaborate with nonprofit organizations in Southern California and beyond to build mobile and web applications."
+            description: "Welcome to Intro to UI/UX for Developers, hosted by LA Blueprint, a nonprofit organization dedicated to building technology for social good. In this workshop, you’ll explore why UI/UX matters, learn how to design effectively in Figma, collaborate more efficiently with designers, and understand best practices for engineering handoff. Expect a hands-on, but fun interactive session designed to help you learn practical skills!"
         },
         {
             title: "MLH: Intro to Git Copilot & Intro to Gemini",
