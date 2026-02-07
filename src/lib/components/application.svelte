@@ -325,7 +325,7 @@
 							style="visibility: hidden;"
 						/> -->
 						<form on:submit|preventDefault={submitHandler}>
-							{#if error === undefined && !success}
+							{#if !error && !success}
 								<div class="input-group flex-col flex">
 									<label class="input-label rubik purple"
 										><span style="font-size: 1.5em;">Application Form</span></label
