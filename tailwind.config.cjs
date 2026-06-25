@@ -11,6 +11,9 @@ const config = {
 				ranille: ["Ranille Normal", "serif"],
 				reactor7: ["Reactor7", "mono"],
 				deadjim: ["DeadJim", "sans-serif"],
+				milonga: ["Milonga", "serif"],
+				montserrat_alternates: ["Montserrat Alternates", "sans-serif"],
+				montserrat_alternates_bold: ["Montserrat Alternates Bold", "sans-serif"],
 			},
 			colors: {
 				darkblue: {

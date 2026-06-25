@@ -1,23 +1,21 @@
 <script lang="ts">
-	import Logo from '../media/QWERHacks.svg';
+	import Deadjim from '../media/deadjim.svg';
 </script>
 
 <!-- <div id="logo-parent" class="w-full grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-5"> -->
-<div id="logo-parent" class="w-full">
-	<!-- Added top padding here -->
-	<div id="image" class="w-full logo">
-		<!-- Added left padding here -->
-		<!-- Logo image -->
-		<a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">
-			<img src={Logo} alt="QWERHACKS Logo" class=" absolute" />
-		</a>
+<div id="logo-parent" class="w-full flex flex-col md:flex-row">
+	<div id="image" class="flex grow-[1] items-center justify-center flex-col">
+		<span class="ucla">@UCLA</span>
+		<img src={Deadjim} alt="QWERHACKS Logo" class="w-[120%] max-w-[120%] md:max-w-full md:w-11/12 h-full"/>
+		<span class="date">FEB 2-4, 2027</span>
 	</div>
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap');
 	.name {
 		display: grid;
-		grid-template-areas: 'zero';
+		grid-template-areas: "zero";
 		min-height: 0;
 		grid-template-columns: 1fr;
 		grid-template-columns: 1fr;
@@ -35,65 +33,18 @@
 		left: 20px;
 		top: 20px;
 	}
-
+	span {
+		font-family: 'Fredoka', sans-serif;
+		font-size: max(3.5vw, 1.4rem);
+		color: white;
+	}
+	.ucla {
+		position: relative;
+		color: white;
+		left: 25%;
+		bottom: -12%;
+	}
 	.date {
 		margin-top: -3%;
-	}
-	/* @media (min-width: 585px) and (max-width: 666px) {
-		.logo {
-			width: 70%;
-			justify-items: center;
-			padding-top: 20%;
-		}
-	}
-	@media (min-width: 666px) {
-		.logo {
-			width: 60%;
-			justify-items: left;
-		}
-	}
-	@media (min-width: 768px) {
-		.logo {
-			width: 80%;
-			justify-items: left;
-		}
-	}
-	@media (min-width: 900px) {
-		.logo {
-			width: 80%;
-			justify-items: left;
-			padding: 5%;
-			position: absolute;
-		}
-	} */
-	@media (max-aspect-ratio: 5/6) {
-		.logo {
-			width: 100%;
-			justify-items: center;
-			align-items: center;
-			/* margin-top: 5%; */
-			padding-top: 7%;
-			position: absolute;
-		}
-	}
-	@media (min-aspect-ratio: 5/6) and (max-aspect-ratio: 7/5) {
-		.logo {
-			width: 40%;
-			justify-items: center;
-			align-items: center;
-			/* margin-top: 5%; */
-			padding: 5%;
-			position: absolute;
-		}
-	}
-	@media (min-aspect-ratio: 7/5) {
-		.logo {
-			width: 30%;
-			justify-items: left;
-			align-items: left;
-			/* margin-top: 5%; */
-			padding: 5%;
-			position: absolute;
-		}
 	}
 </style>

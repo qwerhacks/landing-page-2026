@@ -1,147 +1,26 @@
 <script lang="ts">
 	import Background from '$lib/components/background.svelte';
 	import Hero from '$lib/components/hero.svelte';
-	import ApplicationDirectEmbed from '$lib/components/application_direct_embed.svelte';
-	import VolunteerFormEmbed from '$lib/components/volunteer_form_embed.svelte';
-	import About from '$lib/components/about.svelte';
-	import Info from '$lib/components/info.svelte';
-	import Sponsors from '$lib/components/sponsors.svelte';
-	import Rsvp from '$lib/components/rsvp.svelte';
-	import Navbar from '$lib/components/navbar.svelte';
-	import ThemeAndTracks from '$lib/components/theme-and-tracks.svelte';
-	import Calendar from '$lib/components/calendar.svelte';
-
-	let activeTab: 'application' | 'schedule' | 'volunteer' | 'about' | 'info' | 'sponsors' | 'rsvp' | 'theme-and-tracks' = 'schedule';
 </script>
 
-<div class="w-full h-full overflow-y-auto overscroll-contain">
-	<a
-		id="mlh-trust-badge"
-		style="display:block;max-width:100px;min-width:60px;position:fixed;right:5%;top:0;width:10%;z-index:10000"
-		href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=gray"
-		target="_blank"
-		><img
-			src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-gray.svg"
-			alt="Major League Hacking 2026 Hackathon Season"
-			style="width:100%"
-		/></a
-	>
-	<div id="background" class="fixed w-full h-full -z-10">
+<div class="w-full h-full overflow-x-hidden overflow-y-auto overscroll-contain">
+	<a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=yellow" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-yellow.svg" alt="Major League Hacking 2026 Hackathon Season" style="width:100%"></a>
+	<div id="background" class="absolute w-full h-full -z-10">
 		<Background />
 	</div>
-	<div class="sticky top-0 z-50 w-full">
-		<Navbar bind:activeTab />
+	<div id="content" class="z-10 flex flex-col items-center justify-center w-screen min-h-screen py-16">
+		<Hero />
 	</div>
-	<div class="w-full max-w-none h-auto pt-10 pb-10 flex flex-col items-center justify-center z-20 relative px-4">
-		<h1 class="text-6xl sm:text-6xl md:text-8xl text-white font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center break-words max-w-full" style="font-family: 'Milonga', serif;">
-			✨QWER Hacks✨
-		</h1>
-		<p class="text-xl sm:text-2xl md:text-3xl text-white mt-2 font-serif drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-110 cursor-default text-center" style="font-family: 'Ranille Normal', serif;">
-			UCLA | Feb 7-8, 2026
-		</p>
-		<div class="buttons-flex">
-			<a 
-				href="https://discord.gg/D7Kg2Ef9"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="inline-block mt-6 px-8 py-3 bg-[#C5A059] text-white font-bold text-xl sm:text-2xl uppercase tracking-wider rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-[#b08d4d] hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] cursor-pointer text-center no-underline" 
-				style="font-family: 'Ranille Normal', serif;"
-
-			>
-				Discord
-			</a>
-			<a 
-				href="https://qwer-hacks-2026.devpost.com/?_gl=1*1izr6bf*_gcl_au*NTU5MTg4ODE4LjE3NjcxNDIwMzk.*_ga*MjAwNjg3MzQ1MC4xNzY3MTQyMDM5*_ga_0YHJK3Y10M*czE3NzAxOTk3MTQkbzYkZzEkdDE3NzAxOTk3MjEkajUzJGwwJGgw"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="inline-block mt-6 px-8 py-3 bg-[#C5A059] text-white font-bold text-xl sm:text-2xl uppercase tracking-wider rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-[#b08d4d] hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] cursor-pointer text-center no-underline" 
-				style="font-family: 'Ranille Normal', serif;"
-
-			>
-				Devpost
-			</a>
-		</div>
-	</div>
-	<div id="content" class="z-10 flex flex-col items-center justify-center w-full pb-20">
-		{#if activeTab === 'application'}
-			<ApplicationDirectEmbed />
-		{:else if activeTab === 'schedule'}
-			<Calendar />
-		{:else if activeTab === 'volunteer'}
-			<VolunteerFormEmbed />
-		{:else if activeTab === 'rsvp'}
-			<Rsvp />
-		{:else if activeTab === 'about'}
-			<div class="w-full px-4">
-				<About />
-			</div>
-		{:else if activeTab === 'info'}
-			<div class="w-full px-4">
-				<Info setTab={(tab) => (activeTab = tab)} />
-			</div>
-		{:else if activeTab === 'theme-and-tracks'}
-			<div class="w-full px-4">
-				<ThemeAndTracks />
-			</div>
-		{:else if activeTab === 'sponsors'}
-			<div class="w-full px-4">
-				<Sponsors />
-			</div>
-		{/if}
-	</div>
-	<footer class="footer text-center pb-10 z-20 relative mb-[20px] mx-[20px]">
-		<a
-			href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="footer-link"
-		>
-			MLH Code of Conduct
-		</a>
-		| Made with ˚ʚ♡ɞ˚ by the QWER Hacks organizing team!
-	</footer>
 </div>
 
-<svelte:head>
-	<link rel="preload" href="/fonts/NightyDEMO.woff2" as="font" type="font/woff2" crossorigin />
-	<link
-		rel="preload"
-		href="/fonts/RanilleNormal-Regular.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin
-	/>
-	<link rel="preload" href="/fonts/Reactor7.woff2" as="font" type="font/woff2" crossorigin />
-	<link rel="preload" href="/fonts/Milonga-Regular.ttf" as="font" type="font/ttf" crossorigin />
-</svelte:head>
-
 <style>
-	#main-content {
-		min-height: 100vh; /* Full viewport height */
-	}
-	.c {
-		mix-blend-mode: screen;
-	}
-	footer.footer {
-		color: #ffffff;
-		font-family: 'Spectral', serif;
-		font-size: 0.9rem;
-	}
-
-	a.footer-link {
-		color: #ffffff;
-		text-decoration: underline;
-	}
-
-	a.footer-link:hover {
-		color: #fef08a;
-	}
-
-	.buttons-flex {
-		display: flex;
-		gap: 20px;
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-	
+.c {
+	mix-blend-mode: screen;
+}
 </style>
+
+<svelte:head>
+	<link rel="preload" href="/fonts/NightyDEMO.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/RanilleNormal-Regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/Reactor7.woff2" as="font" type="font/woff2" crossorigin>
+</svelte:head>
